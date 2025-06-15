@@ -1,0 +1,67 @@
+# Top-level .gitignore for web_app_project
+
+# Python (Backend)
+# --------------------
+# Virtual environment
+/Backend/venv/
+/Backend/.pytest_cache/
+/Backend/.mypy_cache/
+/Backend/.ruff_cache/
+/Backend/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env                 # Environment variables for local/prod backend config
+!.env.example         # Keep the example file
+
+# Editor/IDE files
+.vscode/              # VS Code settings (if not shared)
+.idea/                # PyCharm/IntelliJ IDEA files
+*.iml
+*.ipr
+*.iws
+
+# FastAPI specific
+.ipynb_checkpoints/   # Jupyter Notebook checkpoints if you use them
+celerybeat-schedule   # Celery schedule file
+*.sqlite3             # SQLite databases (if used for testing)
+
+# React (Frontend)
+# --------------------
+# node_modules
+/Frontend/node_modules/
+/Frontend/dist/         # Vite build output (this is crucial!)
+/Frontend/.vite/        # Vite cache directory
+/Frontend/.env          # Generic .env file (if you have one)
+/Frontend/.env.*.local  # Local environment overrides (e.g., .env.development.local)
+!.env.development       # Keep the development env example (if it's not a secret)
+!.env.production        # Keep the production env example (if it's not a secret)
+!.env.development.example # Keep example files for env vars
+!.env.production.example
+
+# IDEs
+/Frontend/.idea/        # WebStorm/IntelliJ IDEA
+/Frontend/.vscode/      # VS Code specific settings (if not shared)
+
+# OS generated files
+.DS_Store
+.Trashes
+Thumbs.db
+ehthumbs.db
+.ipynb_checkpoints/ # In case you have notebooks in frontend development
+
+# Logs and temporary files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm/
+.yarn-cache/
+
+# Coverage reports
+coverage/
+
+# Misc
+*.swp
+*.bak
+*.swo
